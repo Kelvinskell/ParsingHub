@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Count the number of words in a file (example.txt)
+# Print the sum of all integers contained in a given file
 
 # Import modules
 import sys
