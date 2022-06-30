@@ -10,7 +10,7 @@ then
 	echo -n "Filename: "
 	read filename
 else
-	$1=filename
+	filename=$1
 fi
 
 # Test file existence
@@ -37,7 +37,7 @@ function Regex()
 }
 Regex
 
-if ${#addr[@]} == 0
+if [[ ${#addr[@]} == 0 ]]
 then
 	echo "No valid ipv4 address found in $filename"
 else
