@@ -16,6 +16,7 @@ else:
 # Check if file exists
 if not os.path.isfile(filename):
     print(f'{filename}: Not a valid file')
+    sys.exit()
 
 def wordCount(file):
     pattern = r'[a-zA-Z]+'
