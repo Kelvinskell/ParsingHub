@@ -2,7 +2,7 @@
 
 if [[ $* < 1 ]]
 then
-	echo -n "First file: "
+	echo -n "Enter filename: "
 	read file
 else
 	file=$1
@@ -14,4 +14,4 @@ then
 	exit $?
 fi
 
-cat $file|xargs -n 1|sort|uniq -c|awk 'BEGIN{print "WORD <-----> FREQUENCY"} {print $2 " <-----> " $1, "times", "<----->", ($2 / NR) * 100 }'
+cat $file|xargs -n 1|sort|uniq -c|awk 'BEGIN {print "WORD <-----> FREQUENCY"} {print $2 " <-----> " $1, "times"}'
