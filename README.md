@@ -10,6 +10,7 @@ The idea for this project was developed after working through
 
 ## How To Walk Through
 There are five chapters in this hub, corresponding with the chapters in the [Parsing-Workshop](https://github.com/InsightDataScience/Parsing-Workshop).
+The Parsing-Workshop repository has been included as a subtree in this project for easy reference. 
 
 Each chapter contains Python and/or Bash solutions to the exercises in the Parsing-Workshop, together with any necessary test-data. 
 All of my solutions have been tested on at least two Linux distributions, so it is guaranteed to work on your own Linux system. 
