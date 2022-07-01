@@ -1,5 +1,6 @@
 #1) Get your mac address, print it by itself on a line.
 #  i.e. ifconfig | awk '{}'
+Solution: ifconfig |awk '{if ($1 ~ /ether/) {print "MAC Address:", $2}}'
 
 #2) Put your mac address in a variable named MACADDY
 #  hint, use tick marks '`' which is left of your 1 key on a mac.
