@@ -21,7 +21,15 @@ else
 	fi
 fi
 
-analyselog() {
-	echo "Analysing $logfile. This might take a few seconds."
+echo -e "Enter status code \nPress Enter to use default status code (200): "
+read code
+code=304
+
+StatusCode() {
+	count=$(cat $logfile |awk -v code=$code '$9 == code'| wc -l)
+	lines=$(wc -l $logfile |awk '{print $1}')
+	percent=$(echo "($count/$lines)*100" |bc -l |xargs printf "%.2f")
+
 }
-analyselog
+StatusCode
+
