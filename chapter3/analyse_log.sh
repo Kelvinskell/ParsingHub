@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# A bash scrip that analyses a typical apache log file
+# A bash scrip that analyses a typical Apache access log file
 # the script takes the argument $1 as the filename of the logfile to parse
 # If no argument is passed, the script will attempt to use the default file (apache_logs.txt) found in this repository.
 
