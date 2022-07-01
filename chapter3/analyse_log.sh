@@ -3,7 +3,7 @@
 # Accept and validate filename argument
 if [[ $* < 1 ]]
 then
-	echo "No Logfile supplied. Using default file"
+	echo "No Logfile supplied. Using default file."
 	if [[ ! -f apache_logs.txt ]]
 	then
 		echo -e "Default logfile (apache_logs.txt) no longer exists. \nExiting..."
@@ -20,3 +20,8 @@ else
 		logfile=$1
 	fi
 fi
+
+analyselog() {
+	echo "Analysing $logfile. This might take a few seconds."
+}
+analyselog
