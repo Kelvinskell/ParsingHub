@@ -32,8 +32,13 @@ AnalyseLog() {
 	lines=$(wc -l $logfile |awk '{print $1}')
 	percent=$(echo "($count/$lines)*100" |bc -l |xargs printf "%.2f")
 	browser=$(cat $logfile |awk '{print $(NF)}' |awk -F/ '{if($1 !~ /http/){print $1}}' |sort |uniq -c|sort -n |awk '{print $2}' |tail -1)
+	requests=$(cat $logfile |awk '{print $4}' |sed 's/^\[//' |awk -F/ '{print $1}' |awk '{x[$1]++} END{for(i in x) {d+=x[i];count++}print (d / count)}')
+
+
+
 }
 AnalyseLog
 
 echo "Number of requests with status code: $status_code -----> $count ($percent%)"
 echo "Most used Web browser -----> $browser"
+echo "Average requests per day -----> $requests"
