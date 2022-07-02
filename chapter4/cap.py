@@ -36,6 +36,12 @@ def validate():
 def avg_time():
     filename = validate()
     cap = pyshark.FileCapture(filename)
+
+    # Activate capture files
+    try:
+        cap[10000]
+    except KeyError:
+        pass
     
     packet1 = int(cap[1].sniff_time.timestamp())
     packet2 = int(cap[2].sniff_time.timestamp())
