@@ -34,12 +34,14 @@ def validate():
 
 # Print the average time in seconds between the first two packets
 def avg_time():
-    cap = pyshark.FileCapture(validate())
+    filename = validate()
+    cap = pyshark.FileCapture(filename)
     
     packet1 = int(cap[1].sniff_time.timestamp())
     packet2 = int(cap[2].sniff_time.timestamp())
     seconds = packet1 - packet2
 
+    print(f"Analysing {filename}")
     print("The average time between two packets is:", abs(seconds), "seconds.")
 
 
